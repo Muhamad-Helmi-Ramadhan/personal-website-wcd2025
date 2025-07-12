@@ -1,0 +1,251 @@
+/* Contact Section */
+.contact {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #f8f5fb 0%, #ede8f2 100%);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-title {
+  font-size: 3rem;
+  color: #5a4b7c;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.contact-title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-subtitle {
+  font-size: 1.2rem;
+  color: #2c1810;
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease 0.2s;
+}
+
+.contact-subtitle.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-form {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 3rem;
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(90, 75, 124, 0.1);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease 0.4s;
+}
+
+.contact-form.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: 2px solid rgba(90, 75, 124, 0.2);
+  border-radius: 15px;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #5a4b7c;
+  box-shadow: 0 0 0 3px rgba(90, 75, 124, 0.1);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(44, 24, 16, 0.6);
+}
+
+.form-group textarea {
+  height: 120px;
+  resize: vertical;
+  min-height: 80px;
+  max-height: 200px;
+}
+
+.submit-button {
+  background: #5a4b7c;
+  color: white;
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: 100%;
+  font-family: inherit;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.submit-button:hover {
+  background: #4a3b6c;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(90, 75, 124, 0.3);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+  box-shadow: 0 5px 10px rgba(90, 75, 124, 0.3);
+}
+
+.submit-button:disabled {
+  background: rgba(90, 75, 124, 0.6);
+  cursor: not-allowed;
+}
+
+.submit-button.loading {
+  position: relative;
+  color: transparent;
+}
+
+.submit-button.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: button-loading-spinner 1s ease infinite;
+}
+
+@keyframes button-loading-spinner {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.success-message,
+.error-message {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.success-message {
+  color: #2f9e44;
+}
+
+.error-message {
+  color: #d6336c;
+}
+
+/* Rotating Decorative Elements */
+.decorative-sensei {
+  position: absolute;
+  font-size: 2.5rem;
+  opacity: 0.15;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+.sensei-top-right {
+  top: 2rem;
+  right: 2rem;
+}
+
+.sensei-bottom-left {
+  bottom: 2rem;
+  left: 2rem;
+}
+
+.sensei-top-left {
+  top: 2rem;
+  left: 2rem;
+}
+
+.sensei-bottom-right {
+  bottom: 2rem;
+  right: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact {
+    padding: 3rem 1rem;
+  }
+
+  .contact-title {
+    font-size: 2.5rem;
+  }
+
+  .contact-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-form {
+    padding: 2rem;
+    border-radius: 20px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.8rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .submit-button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+
+  .decorative-sensei {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 2rem 1rem;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .contact-form {
+    padding: 1.5rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .decorative-sensei {
+    font-size: 1.5rem;
+  }
+}

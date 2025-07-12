@@ -1,0 +1,240 @@
+/* === Global Styles === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  background-color: #f8f9fa;
+  color: #2c2c2c;
+}
+
+/* === Hero Section === */
+.hero {
+  background: linear-gradient(135deg, #f8f9fa, #f8f9fa);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 2rem;
+  z-index: 2;
+  position: relative;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1,
+.hero-text h2 {
+  color: #1f3f90;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+.hero-text h2 {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #2c2c2c;
+  margin-bottom: 2rem;
+  max-width: 400px;
+}
+
+.cta-button {
+  background: #1f3f90;
+  color: white;
+  padding: 1rem 2.5rem;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background: #163171;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(31, 63, 144, 0.3);
+}
+
+.hero-image {
+  flex: 0 0 300px;
+}
+
+.profile-pic {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d2f1f8, #e9f3f9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8rem;
+  color: #1f3f90;
+  box-shadow: 0 20px 40px rgba(31, 63, 144, 0.2);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* === About Section === */
+.about {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9f3f9 100%);
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.about-image {
+  flex: 0 0 250px;
+}
+
+.about-pic {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 6rem;
+  color: #1f3f90;
+  box-shadow: 0 15px 30px rgba(31, 63, 144, 0.2);
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-content h2 {
+  font-size: 3rem;
+  color: #f8f9fa;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.about-content p {
+  font-size: 1.2rem;
+  color: #2c2c2c;
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+/* === Work Section === */
+.work {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9f3f9 100%);
+}
+
+.work h2 {
+  font-size: 3rem;
+  color: #1f3f90;
+  margin-bottom: 3rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.project-card h3 {
+  color: #1f3f90;
+}
+
+/* === Contact Section === */
+.contact {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9f3f9 100%);
+}
+
+.contact h2 {
+  color: #1f3f90;
+}
+
+.contact-subtitle {
+  color: #2c2c2c;
+}
+
+.submit-button {
+  background: #1f3f90;
+  color: #ffffff;
+}
+
+.submit-button:hover {
+  background: #163171;
+}
+
+/* === Footer === */
+.footer {
+  background: #1f3f90;
+  color: white;
+}
+
+.footer-text h3,
+.footer-social h4 {
+  color: #d2f1f8;
+}
+
+/* === Responsive Tweaks === */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+  .hero-text h2 {
+    font-size: 3rem;
+  }
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
